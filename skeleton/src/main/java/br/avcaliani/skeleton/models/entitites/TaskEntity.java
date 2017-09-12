@@ -1,4 +1,4 @@
-package br.avcaliani.skeleton.model.entitites;
+package br.avcaliani.skeleton.models.entitites;
 
 import lombok.Data;
 
@@ -21,11 +21,11 @@ public class TaskEntity {
     @Column(nullable = false)
     private String description;
 
-    // @Column -> está subentendido aqui.
+    // @Column -> You don't have to declare, but you can ;)
     private Boolean done;
 
     /**
-     * Construtor Padrão. Usado para a conversão em/para JSON.
+     * Default Constructor. Used to convert in/to JSON.
      */
     public TaskEntity() {
 
