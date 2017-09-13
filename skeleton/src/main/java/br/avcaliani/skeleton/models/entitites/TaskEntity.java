@@ -23,7 +23,7 @@ public class TaskEntity {
     private String description;
 
     // @Column -> You don't have to declare, but you can ;)
-    private Boolean done;
+    private Boolean ready;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<SubTaskEntity> subTasks;

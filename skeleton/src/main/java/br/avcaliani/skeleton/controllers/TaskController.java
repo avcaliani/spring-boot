@@ -7,55 +7,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 @RestController
 public class TaskController {
-
-    private static Logger L;
-
-    static {
-        L = Logger.getLogger(TaskController.class.getSimpleName());
-    }
 
     @Autowired
     private TaskService taskService;
 
 
+    //
+    // Here is an Example of generic response for Success or Error.
+    //
+    //@RequestMapping(value = "/task", method = RequestMethod.GET)
+    //@ResponseBody
+    //public ResponseJson findAll() {
+    //
+    //    try {
+    //        return new ResponseJson(this.taskService.findAll());
+    //    } catch (TaskException ex) {
+    //        return new ResponseJson(ex);
+    //    }
+    //}
+
     @RequestMapping(value = "/task", method = RequestMethod.GET)
     @ResponseBody
-    public List<TaskEntity> findAll() {
-
-        try {
-            return this.taskService.findAll();
-        } catch (TaskException ex) {
-            L.log(Level.SEVERE, "Error to Find All Tasks!", ex);
-        }
-
-        return null;
+    public List<TaskEntity> findAll() throws TaskException{
+        return this.taskService.findAll();
     }
 
-    /**
-     * Here is an Example of generic response for Success or Error.
-     */
-    /*@RequestMapping(value = "/task", method = RequestMethod.GET)
-    @ResponseBody
-    public ResponseJson findAll() {
-
-        try {
-            return new ResponseJson(this.taskService.findAll());
-        } catch (TaskException ex) {
-            L.log(Level.SEVERE, "Error to Find All Tasks!", ex);
-            return new ResponseJson(ex);
-        }
-    }*/
-
-
-
-    /**
-     * If You want, you can throw exception "as response", you just have to declare "throws...".
-     */
     @RequestMapping(value = "/task/{id}", method = RequestMethod.GET)
     @ResponseBody
     public TaskEntity findById(@PathVariable(value = "id") Long id) throws TaskException {
@@ -64,28 +43,14 @@ public class TaskController {
 
     @RequestMapping(value = "/task", method = RequestMethod.POST)
     @ResponseBody
-    public TaskEntity save(@RequestBody TaskEntity task) {
-
-        try {
-            return this.taskService.save(task);
-        } catch (TaskException ex) {
-            L.log(Level.SEVERE, "Error to Save Task!", ex);
-        }
-
-        return null;
+    public TaskEntity save(@RequestBody TaskEntity task) throws TaskException {
+        return this.taskService.save(task);
     }
 
     @RequestMapping(value = "/task", method = RequestMethod.PUT)
     @ResponseBody
-    public TaskEntity update(@RequestBody TaskEntity task) {
-
-        try {
-            return this.taskService.save(task);
-        } catch (TaskException ex) {
-            L.log(Level.SEVERE, "Error to Update Task!", ex);
-        }
-
-        return null;
+    public TaskEntity update(@RequestBody TaskEntity task) throws TaskException {
+         return this.taskService.save(task);
     }
 
     @RequestMapping(value = "/task/{id}", method = RequestMethod.DELETE)
