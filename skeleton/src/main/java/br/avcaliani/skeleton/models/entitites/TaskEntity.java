@@ -3,6 +3,7 @@ package br.avcaliani.skeleton.models.entitites;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "task")
 @Table(indexes = {
@@ -24,8 +25,11 @@ public class TaskEntity {
     // @Column -> You don't have to declare, but you can ;)
     private Boolean done;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<SubTaskEntity> subTasks;
+
     /**
-     * Default Constructor. Used to convert in/to JSON.
+     * Default Constructor. Used to convert to/from JSON.
      */
     public TaskEntity() {
 
