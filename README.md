@@ -13,7 +13,7 @@ By Anthony Vilarim Caliani [@avcaliani](https://github.com/avcaliani)
 
 
 # Project Description
-This is a small Spring API project. Here I'he learned how to do the basic stuffs like:
+This is a small Spring API project. Here I've learned how to do the basic stuffs like:
 
 - Controllers
 - Model
