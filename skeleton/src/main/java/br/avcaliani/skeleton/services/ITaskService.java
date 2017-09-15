@@ -41,4 +41,22 @@ public interface ITaskService {
      */
     public Boolean remove(Long id);
 
+    /**
+     * Find Tasks by Ready Status.
+     *
+     * @param ready Status.
+     * @return List of Tasks
+     * @throws TaskException If Something wrong happen.
+     */
+    public List<TaskEntity> findByReady(Boolean ready) throws TaskException;
+
+    /**
+     * Find Tasks looking for description like.
+     *
+     * @param value Part of Description.
+     * @return List of Tasks
+     * @throws TaskException If Something wrong happen.
+     */
+    public List<TaskEntity> findByDescriptionLike(String value) throws TaskException;
+
 }

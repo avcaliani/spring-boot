@@ -83,4 +83,34 @@ public class TaskService implements ITaskService {
 
         return false;
     }
+
+    @Override
+    public List<TaskEntity> findByReady(Boolean ready) throws TaskException {
+
+        if (ready == null)
+            throw new TaskException("Null \"ready\" Param!");
+
+        try {
+
+            return this.taskRepository.findByReady(ready);
+
+        } catch (Exception ex){
+            throw new TaskException("Error to Find Tasks!", ex);
+        }
+    }
+
+    @Override
+    public List<TaskEntity> findByDescriptionLike(String value) throws TaskException {
+
+        if (value == null)
+            throw new TaskException("Null \"value\" Param!");
+
+        try {
+
+            return this.taskRepository.findByDescriptionLike(value);
+
+        } catch (Exception ex){
+            throw new TaskException("Error to Find Tasks!", ex);
+        }
+    }
 }
