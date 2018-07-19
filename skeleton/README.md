@@ -1,4 +1,4 @@
-# Spring API
+# Skeleton
 By Anthony Vilarim Caliani [@avcaliani](https://github.com/avcaliani)
 
 [![#](https://img.shields.io/badge/Java_JDK-1.8-red.svg)](#)
