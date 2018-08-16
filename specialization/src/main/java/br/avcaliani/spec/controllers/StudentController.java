@@ -16,11 +16,13 @@ public class StudentController {
     private StudentService service;
 
     @GetMapping
+    @ResponseBody
     public List<StudentDTO> find() {
         return this.service.findAll();
     }
 
     @GetMapping("/{id}")
+    @ResponseBody
     public StudentDTO find(@PathVariable Long id) throws Exception {
         return this.service.find(id);
     }
