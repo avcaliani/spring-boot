@@ -1,6 +1,6 @@
 package br.avcaliani.spec.repositories;
 
-import br.avcaliani.spec.entities.Student;
+import br.avcaliani.spec.model.entities.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,6 @@
-package br.avcaliani.spec.entities;
+package br.avcaliani.spec.model.entities;
 
+import br.avcaliani.spec.model.dtos.StudentDTO;
 import lombok.Data;
 import javax.persistence.*;
 import java.util.Objects;
@@ -53,6 +54,21 @@ public class Student {
         this.name = name;
         this.passport = passport;
         this.email = email;
+    }
+
+    /**
+     * DTO Converter Constructor.
+     * @param dto Student DTO.
+     */
+    public Student(StudentDTO dto) {
+
+        if (dto == null)
+            return;
+
+        this.id = dto.getId();
+        this.name = dto.getName();
+        this.passport = dto.getPassport();
+        this.email = dto.getEmail();
     }
 
     @Override

@@ -1,6 +1,7 @@
 package br.avcaliani.spec.services;
 
-import br.avcaliani.spec.entities.Student;
+import br.avcaliani.spec.model.dtos.StudentDTO;
+import br.avcaliani.spec.model.entities.Student;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface StudentService {
      * Find all students.
      * @return List of Students.
      */
-    public List<Student> findAll();
+    public List<StudentDTO> findAll();
 
     /**
      * Find student by ID.
@@ -18,5 +19,5 @@ public interface StudentService {
      * @return Student
      * @throws Exception If student doesn't exists.
      */
-    public Student find(Long id) throws Exception;
+    public StudentDTO find(Long id) throws Exception;
 }

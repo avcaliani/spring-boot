@@ -1,6 +1,6 @@
 package br.avcaliani.spec.controllers;
 
-import br.avcaliani.spec.entities.Student;
+import br.avcaliani.spec.model.dtos.StudentDTO;
 import br.avcaliani.spec.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,12 +16,12 @@ public class StudentController {
     private StudentService service;
 
     @GetMapping
-    public List<Student> find() {
+    public List<StudentDTO> find() {
         return this.service.findAll();
     }
 
     @GetMapping("/{id}")
-    public Student find(@PathVariable Long id) throws Exception {
+    public StudentDTO find(@PathVariable Long id) throws Exception {
         return this.service.find(id);
     }
 
