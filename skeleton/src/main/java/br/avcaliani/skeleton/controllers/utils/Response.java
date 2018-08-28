@@ -1,4 +1,4 @@
-package br.avcaliani.skeleton.util;
+package br.avcaliani.skeleton.controllers.utils;
 
 import lombok.Data;
 
@@ -7,19 +7,19 @@ import lombok.Data;
  * If you decide to use this solution, all your responses will follow this pattern.
  */
 @Data
-public class ResponseJson {
+public class Response<T> {
 
     private Integer status;
     private String error;
-    private Object data;
+    private T data;
 
     /**
      * Success Constructor.
      * @param data Response Object.
      */
-    public ResponseJson(Object data) {
+    public Response(T data) {
         this.status = 200;
-        this.error = "No Error.";
+        this.error = null;
         this.data = data;
     }
 
@@ -27,7 +27,7 @@ public class ResponseJson {
      * Error Constructor.
      * @param throwable Response Error.
      */
-    public ResponseJson(Throwable throwable) {
+    public Response(Throwable throwable) {
         this.status = 500;
         this.error = throwable.getMessage();
         this.data = null;

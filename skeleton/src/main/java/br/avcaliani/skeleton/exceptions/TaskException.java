@@ -1,6 +1,6 @@
 package br.avcaliani.skeleton.exceptions;
 
-public class TaskException extends Exception {
+public class TaskException extends RuntimeException {
 
     /**
      * Default Constructor.

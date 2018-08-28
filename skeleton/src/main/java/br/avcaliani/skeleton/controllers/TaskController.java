@@ -1,80 +1,77 @@
 package br.avcaliani.skeleton.controllers;
 
+import br.avcaliani.skeleton.controllers.utils.HandlerController;
+import br.avcaliani.skeleton.controllers.utils.Response;
 import br.avcaliani.skeleton.exceptions.TaskException;
-import br.avcaliani.skeleton.models.entitites.TaskEntity;
-import br.avcaliani.skeleton.services.ITaskService;
+import br.avcaliani.skeleton.model.dtos.TaskDTO;
+import br.avcaliani.skeleton.services.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
-public class TaskController {
+@RequestMapping("/task")
+@CrossOrigin(allowedHeaders = "*")
+public class TaskController extends HandlerController {
 
     @Autowired
-    private ITaskService taskService;
+    private TaskService service;
 
-
-    //
-    // Here is an Example of generic response for Success or Error.
-    //
-    // @RequestMapping(value = "/task", method = RequestMethod.GET)
-    // @ResponseBody
-    // public ResponseJson findAll() {
-    //
-    //     try {
-    //         return new ResponseJson(this.taskService.findAll());
-    //     } catch (TaskException ex) {
-    //         return new ResponseJson(ex);
-    //     }
-    //}
-
-    @RequestMapping(value = "/task", method = RequestMethod.GET)
+    // ResponseEntity is the "Spring Boot default template" and it will have my default template.
+    // Actually it's not necessary, but I think it's a good idea.
+    // @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping("/")
     @ResponseBody
-    public List<TaskEntity> findAll() throws TaskException{
-        return this.taskService.findAll();
+    public ResponseEntity<Response> get() throws TaskException {
+        return ResponseEntity.ok(new Response(this.service.findAll()));
     }
 
-    @RequestMapping(value = "/task/{id}", method = RequestMethod.GET)
+    @GetMapping("/{id}")
     @ResponseBody
-    public TaskEntity findById(@PathVariable(value = "id") Long id) throws TaskException {
-        return this.taskService.findOne(id);
+    public ResponseEntity<Response> get(@PathVariable("id") Long id) throws TaskException {
+        return ResponseEntity.ok(new Response(this.service.findOne(id)));
     }
 
-    @RequestMapping(value = "/task", method = RequestMethod.POST)
+    @GetMapping("/description/{desc}")
     @ResponseBody
-    public TaskEntity save(@RequestBody TaskEntity task) throws TaskException {
-        return this.taskService.save(task);
+    public ResponseEntity<Response> get(@PathVariable("desc") String desc) throws TaskException {
+        return ResponseEntity.ok(new Response(this.service.findByDescriptionLike(desc)));
     }
 
-    @RequestMapping(value = "/task", method = RequestMethod.PUT)
+    @GetMapping("/ready")
     @ResponseBody
-    public TaskEntity update(@RequestBody TaskEntity task) throws TaskException {
-         return this.taskService.save(task);
+    public ResponseEntity<Response> getReady() throws TaskException {
+        return ResponseEntity.ok(new Response(this.service.findByReady(true)));
     }
 
-    @RequestMapping(value = "/task/{id}", method = RequestMethod.DELETE)
+    @GetMapping("/ready/{bool}")
     @ResponseBody
-    public Boolean remove(@PathVariable(value = "id") Long id) {
-        return this.taskService.remove(id);
+    public ResponseEntity<Response> getReady(@PathVariable("bool") Boolean bool) throws TaskException {
+        return ResponseEntity.ok(new Response(this.service.findByReady(bool)));
     }
 
-    @RequestMapping(value = "/task/ready/{bool}", method = RequestMethod.GET)
+    @PostMapping("/")
     @ResponseBody
-    public List<TaskEntity> findByReady(@PathVariable(name = "bool") Boolean bool) throws TaskException {
-        return this.taskService.findByReady(bool);
+    public ResponseEntity<Response> save(@RequestBody TaskDTO task, HttpServletRequest request) throws TaskException {
+        /**
+         * HttpServletRequest is optional and it can be defined in every method here.
+         * In this object we have many data, like request header for example.
+         */
+        return ResponseEntity.ok(new Response(this.service.save(task)));
     }
 
-    @RequestMapping(value = "/task/ready", method = RequestMethod.GET)
+    @PutMapping("/")
     @ResponseBody
-    public List<TaskEntity> findByReady() throws TaskException {
-        return this.taskService.findByReady(true);
+    public ResponseEntity<Response> update(@RequestBody TaskDTO task) throws TaskException {
+        return ResponseEntity.ok(new Response(this.service.save(task)));
     }
 
-    @RequestMapping(value = "/task/description", method = RequestMethod.POST)
+    @DeleteMapping("/{id}")
     @ResponseBody
-    public List<TaskEntity> findByDescriptionLike(@RequestBody() String value) throws TaskException {
-        return this.taskService.findByDescriptionLike(value);
+    public ResponseEntity<Response> remove(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(new Response(this.service.remove(id)));
     }
 
 }
