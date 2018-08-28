@@ -65,7 +65,7 @@ public class TaskController extends HandlerController {
     @PutMapping("/")
     @ResponseBody
     public ResponseEntity<Response> update(@RequestBody TaskDTO task) throws TaskException {
-        return ResponseEntity.ok(new Response(this.service.save(task)));
+        return ResponseEntity.ok(new Response(this.service.update(task)));
     }
 
     @DeleteMapping("/{id}")
