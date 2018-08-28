@@ -31,8 +31,8 @@ I've created Spring Application with their dependencies [Here \o/](https://start
 
 I hope It helps! Thanks
 
-> ## Thanks
-> Thank You Guilherme Chiavegatto for teach me how to make a Spring Application from scratch.
+## Thanks
+Thank You Guilherme Chiavegatto for teach me how to make a Spring Application from scratch.
 
 ---
 
