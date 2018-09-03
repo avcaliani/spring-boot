@@ -31,6 +31,108 @@ I've created Spring Application with their dependencies [Here \o/](https://start
 
 I hope It helps! Thanks
 
+# Projects Map
+
+## Skeleton Project Map
+```
+skeleton/
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── br
+    │   │       └── avcaliani
+    │   │           └── skeleton
+    │   │               ├── SkeletonApplication.java
+    │   │               ├── controllers
+    │   │               │   ├── TaskController.java
+    │   │               │   └── utils
+    │   │               │       ├── HandlerController.java
+    │   │               │       └── Response.java
+    │   │               ├── exceptions
+    │   │               │   └── TaskException.java
+    │   │               ├── model
+    │   │               │   ├── dtos
+    │   │               │   │   ├── SubTaskDTO.java
+    │   │               │   │   └── TaskDTO.java
+    │   │               │   └── entitites
+    │   │               │       ├── SubTask.java
+    │   │               │       └── Task.java
+    │   │               ├── repositories
+    │   │               │   └── TaskRepository.java
+    │   │               ├── services
+    │   │               │   ├── TaskService.java
+    │   │               │   └── impl
+    │   │               │       └── TaskServiceImpl.java
+    │   │               └── utils
+    │   │                   └── Messages.java
+    │   └── resources
+    │       ├── application-dev.properties
+    │       ├── application-prod.properties
+    │       ├── application.properties
+    │       └── data.sql
+    └── test
+        └── java
+            └── br
+                └── avcaliani
+                    └── skeleton
+                        ├── SkeletonApplicationTests.java
+                        └── services
+                            └── TaskServiceTest.java
+```
+
+## Specification Project Map
+```
+skeleton/
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── br
+    │   │       └── avcaliani
+    │   │           └── skeleton
+    │   │               ├── SkeletonApplication.java
+    │   │               ├── controllers
+    │   │               │   ├── TaskController.java
+    │   │               │   └── utils
+    │   │               │       ├── HandlerController.java
+    │   │               │       └── Response.java
+    │   │               ├── exceptions
+    │   │               │   └── TaskException.java
+    │   │               ├── model
+    │   │               │   ├── dtos
+    │   │               │   │   ├── SubTaskDTO.java
+    │   │               │   │   └── TaskDTO.java
+    │   │               │   └── entitites
+    │   │               │       ├── SubTask.java
+    │   │               │       └── Task.java
+    │   │               ├── repositories
+    │   │               │   └── TaskRepository.java
+    │   │               ├── services
+    │   │               │   ├── TaskService.java
+    │   │               │   └── impl
+    │   │               │       └── TaskServiceImpl.java
+    │   │               └── utils
+    │   │                   └── Messages.java
+    │   └── resources
+    │       ├── application-dev.properties
+    │       ├── application-prod.properties
+    │       ├── application.properties
+    │       └── data.sql
+    └── test
+        └── java
+            └── br
+                └── avcaliani
+                    └── skeleton
+                        ├── SkeletonApplicationTests.java
+                        └── services
+                            └── TaskServiceTest.java
+```
+
 ## Thanks
 Thank You Guilherme Chiavegatto for teach me how to make a Spring Boot Application from scratch.
 
