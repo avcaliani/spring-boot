@@ -1,0 +1,17 @@
+<div class="owner">
+  <h2>{{ contact?.name }}</h2>
+  <span class="tag">{{ contact?.tag }} {{ online ? '@online' : '@offline' }} {{ prod ? '@prod' : '@dev' }}</span>
+  <hr>
+  <ul class="social">
+    <li>
+      <a [href]="contact?.github" target="_blank">
+        <img src="assets/img/github.svg" alt="GitHub">
+      </a>
+    </li>
+    <li>
+      <a [href]="contact?.gitlab" target="_blank">
+        <img src="assets/img/gitlab.svg" alt="GitLab">
+      </a>
+    </li>
+  </ul>
+</div>

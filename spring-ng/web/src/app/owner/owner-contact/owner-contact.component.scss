@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+.owner {
+  text-align: center;
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
+  .tag {
+    display: block;
+    color: #024E30;
+  }
+
+  hr {
+    width: 100px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    border-color: lightgrey;
+    border-style: solid;
+  }
+
+  .social {
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
