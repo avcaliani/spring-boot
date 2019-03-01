@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Build
 
-Run `npm run-script build` to build the project with --prod flag. The build artifacts will be stored in the `api/src/main/resources/static/` directory.
+Run `npm run-script build` to build the project with `--prod` flag. The build artifacts will be stored in the `api/src/main/resources/static/` directory.
