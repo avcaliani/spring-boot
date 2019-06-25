@@ -1,17 +1,5 @@
-# Spring Boot Repository
+# 🍃 Spring Boot
 By Anthony Vilarim Caliani
-
-[![#](https://img.shields.io/badge/Java_JDK-10-red.svg)](#)
-[![#](https://img.shields.io/badge/Maven-yes-3498db.svg)](#)
-[![#](https://img.shields.io/badge/Apache_Tomcat-embed-yellow.svg)](#)
-
-[![#](https://img.shields.io/badge/Spring-2.0.4.RELEASE-green.svg)](#)
-[![#](https://img.shields.io/badge/WEB-yes-brightgreen.svg)](#)
-[![#](https://img.shields.io/badge/JPA-yes-orange.svg)](#)
-[![#](https://img.shields.io/badge/Lombok-yes-ff69b4.svg)](#)
-[![#](https://img.shields.io/badge/MySQL-yes-blue.svg)](#)
-[![#](https://img.shields.io/badge/H2-yes-lightgray.svg)](#)
-
 
 # Projects Description
 These are small Spring API projects. Here I've learned how to do the basic stuffs like:
