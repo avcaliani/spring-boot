@@ -1,128 +1,19 @@
 # 🍃 Spring Boot
 By Anthony Vilarim Caliani
 
-# Projects Description
-These are small Spring API projects. Here I've learned how to do the basic stuffs like:
-- Controllers
-    - Generic Response
-    - Exception Handler
-- Services
-- Model
-    - Entities
-    - DTOs
-- Repositories
-- Named Queries
-- Specifications
-- Use and Configure JPA
+[![#](https://img.shields.io/badge/licence-MIT-blue.svg)](#) [![#](https://img.shields.io/badge/java-1.8_and_11-red.svg)](#) 
 
-I've created Spring Application with their dependencies [Here \o/](https://start.spring.io/) and after that I've imported Spring Application into [IntelliJ](https://www.jetbrains.com/idea/download/) idea. That's all.
+## Description
+These are my spring boot projects, here I've learned how to do stuffs using _spring-boot_ framework:
 
-I hope It helps! Thanks
+> I've created these spring apps [Here \o/](https://start.spring.io/) and after that I've opened them in [IntelliJ](https://www.jetbrains.com/idea/download/) idea.
 
-# Projects Map
+## Projects
 
-## Skeleton Project Map
-```
-skeleton/
-├── mvnw
-├── mvnw.cmd
-├── pom.xml
-└── src
-    ├── main
-    │   ├── java
-    │   │   └── br
-    │   │       └── avcaliani
-    │   │           └── skeleton
-    │   │               ├── SkeletonApplication.java
-    │   │               ├── controllers
-    │   │               │   ├── TaskController.java
-    │   │               │   └── utils
-    │   │               │       ├── HandlerController.java
-    │   │               │       └── Response.java
-    │   │               ├── exceptions
-    │   │               │   └── TaskException.java
-    │   │               ├── model
-    │   │               │   ├── dtos
-    │   │               │   │   ├── SubTaskDTO.java
-    │   │               │   │   └── TaskDTO.java
-    │   │               │   └── entitites
-    │   │               │       ├── SubTask.java
-    │   │               │       └── Task.java
-    │   │               ├── repositories
-    │   │               │   └── TaskRepository.java
-    │   │               ├── services
-    │   │               │   ├── TaskService.java
-    │   │               │   └── impl
-    │   │               │       └── TaskServiceImpl.java
-    │   │               └── utils
-    │   │                   └── Messages.java
-    │   └── resources
-    │       ├── application-dev.properties
-    │       ├── application-prod.properties
-    │       ├── application.properties
-    │       └── data.sql
-    └── test
-        └── java
-            └── br
-                └── avcaliani
-                    └── skeleton
-                        ├── SkeletonApplicationTests.java
-                        └── services
-                            └── TaskServiceTest.java
-```
-
-## Specification Project Map
-```
-skeleton/
-├── mvnw
-├── mvnw.cmd
-├── pom.xml
-└── src
-    ├── main
-    │   ├── java
-    │   │   └── br
-    │   │       └── avcaliani
-    │   │           └── skeleton
-    │   │               ├── SkeletonApplication.java
-    │   │               ├── controllers
-    │   │               │   ├── TaskController.java
-    │   │               │   └── utils
-    │   │               │       ├── HandlerController.java
-    │   │               │       └── Response.java
-    │   │               ├── exceptions
-    │   │               │   └── TaskException.java
-    │   │               ├── model
-    │   │               │   ├── dtos
-    │   │               │   │   ├── SubTaskDTO.java
-    │   │               │   │   └── TaskDTO.java
-    │   │               │   └── entitites
-    │   │               │       ├── SubTask.java
-    │   │               │       └── Task.java
-    │   │               ├── repositories
-    │   │               │   └── TaskRepository.java
-    │   │               ├── services
-    │   │               │   ├── TaskService.java
-    │   │               │   └── impl
-    │   │               │       └── TaskServiceImpl.java
-    │   │               └── utils
-    │   │                   └── Messages.java
-    │   └── resources
-    │       ├── application-dev.properties
-    │       ├── application-prod.properties
-    │       ├── application.properties
-    │       └── data.sql
-    └── test
-        └── java
-            └── br
-                └── avcaliani
-                    └── skeleton
-                        ├── SkeletonApplicationTests.java
-                        └── services
-                            └── TaskServiceTest.java
-```
-
-## Thanks
-Thank You Guilherme Chiavegatto for teach me how to make a Spring Boot Application from scratch.
+- 💀 **[skeleton](skeleton/README.md)** Simple app using spring-boot and its features
+- 🔎 **[specification](specification/README.md)**: Learning about JPA + Specification
+- 📦 **[spring-cache](spring-cache/README.md)**: Working with cached data
+- 🎈 **[spring-ng](spring-ng/README.md)**: RESTful API + Angular App \o/
 
 ---
 
