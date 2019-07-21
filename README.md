@@ -1,7 +1,7 @@
 # 🍃 Spring Boot
 By Anthony Vilarim Caliani
 
-[![#](https://img.shields.io/badge/licence-MIT-blue.svg)](#) [![#](https://img.shields.io/badge/java-1.8_and_11-red.svg)](#) 
+[![#](https://img.shields.io/badge/licence-MIT-blue.svg)](#) [![#](https://img.shields.io/badge/java-1.8-red.svg)](#) 
 
 ## Description
 These are my spring boot projects, here I've learned how to do stuffs using _spring-boot_ framework:

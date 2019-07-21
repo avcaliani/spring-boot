@@ -1,10 +1,10 @@
-# 🎈 Spring Ng
+# 🔎 Specification
 By Anthony Vilarim Caliani
 
 [![#](https://img.shields.io/badge/licence-MIT-blue.svg)](#) [![#](https://img.shields.io/badge/java-1.8-red.svg)](#) 
 
 ## Description
-RESTful API + Angular App \o/
+Learning about JPA + Specification.
 
 ---
 
