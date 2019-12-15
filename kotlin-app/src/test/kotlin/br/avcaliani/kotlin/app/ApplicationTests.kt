@@ -1,13 +1,14 @@
 package br.avcaliani.kotlin.app
 
+import org.junit.Assert
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class KotlinAppApplicationTests {
+class ApplicationTests {
 
 	@Test
 	fun contextLoads() {
+		Assert.assertNotNull(this)
 	}
-
 }
