@@ -16,7 +16,7 @@ class UserController {
     fun find(): List<User> = service.find()
 
     @GetMapping("/{id}")
-    fun findByEmail(@PathVariable id: String): User = service.find(id)
+    fun find(@PathVariable id: String): User = service.find(id)
 
     @PostMapping
     fun add(@RequestBody user: User): User = service.save(user)
