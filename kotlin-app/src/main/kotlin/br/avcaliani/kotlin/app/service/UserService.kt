@@ -1,7 +1,7 @@
-package br.avcaliani.kotlin.app.user.services
+package br.avcaliani.kotlin.app.service
 
-import br.avcaliani.kotlin.app.user.models.User
-import br.avcaliani.kotlin.app.user.repositories.UserRepository
+import br.avcaliani.kotlin.app.model.User
+import br.avcaliani.kotlin.app.repository.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*
@@ -10,7 +10,7 @@ import java.util.*
 class UserService {
 
     @Autowired
-    lateinit var repository: UserRepository
+    private lateinit var repository: UserRepository
 
     fun find(): List<User> = repository.findAll().toList()
 

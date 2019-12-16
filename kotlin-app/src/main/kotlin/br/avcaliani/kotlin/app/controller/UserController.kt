@@ -1,7 +1,7 @@
-package br.avcaliani.kotlin.app.user.controllers
+package br.avcaliani.kotlin.app.controller
 
-import br.avcaliani.kotlin.app.user.models.User
-import br.avcaliani.kotlin.app.user.services.UserService
+import br.avcaliani.kotlin.app.model.User
+import br.avcaliani.kotlin.app.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 class UserController {
 
     @Autowired
-    lateinit var service: UserService
+    private lateinit var service: UserService
 
     @GetMapping
     fun find(): List<User> = service.find()
