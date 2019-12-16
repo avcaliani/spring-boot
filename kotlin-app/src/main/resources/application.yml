@@ -1,0 +1,12 @@
+
+# PROFILE ---------------------------------
+spring.profiles.active: local
+
+# API -------------------------------------
+app:
+  name: kotlin-app
+  version: @project.version@
+  build.time: @build.timestamp@
+
+# LOGGING ---------------------------------
+logging.pattern.console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} => %msg%n"

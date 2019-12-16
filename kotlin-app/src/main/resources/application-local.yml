@@ -1,0 +1,21 @@
+
+# API -------------------------------------
+server.port: 8080
+
+# LOGGING ---------------------------------
+logging.level.root: INFO
+
+# DATABASE ---------------------------------
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: ""
+    driverClassName: org.h2.Driver
+  jpa:
+    hibernate.ddl-auto: create-drop
+    show-sql: true
