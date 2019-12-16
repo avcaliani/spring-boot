@@ -1,6 +1,6 @@
-package br.avcaliani.kotlin.app.repositories
+package br.avcaliani.kotlin.app.user.repositories
 
-import br.avcaliani.kotlin.app.models.User
+import br.avcaliani.kotlin.app.user.models.User
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.CrudRepository
 import org.springframework.data.repository.query.Param

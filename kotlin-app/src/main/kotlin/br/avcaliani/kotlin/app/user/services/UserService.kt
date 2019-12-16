@@ -1,7 +1,7 @@
-package br.avcaliani.kotlin.app.services
+package br.avcaliani.kotlin.app.user.services
 
-import br.avcaliani.kotlin.app.models.User
-import br.avcaliani.kotlin.app.repositories.UserRepository
+import br.avcaliani.kotlin.app.user.models.User
+import br.avcaliani.kotlin.app.user.repositories.UserRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.*

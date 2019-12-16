@@ -1,7 +1,7 @@
-package br.avcaliani.kotlin.app.controllers
+package br.avcaliani.kotlin.app.user.controllers
 
-import br.avcaliani.kotlin.app.models.User
-import br.avcaliani.kotlin.app.services.UserService
+import br.avcaliani.kotlin.app.user.models.User
+import br.avcaliani.kotlin.app.user.services.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.*
 

@@ -1,4 +1,4 @@
-package br.avcaliani.kotlin.app.models
+package br.avcaliani.kotlin.app.user.models
 
 import javax.persistence.Column
 import javax.persistence.Entity
