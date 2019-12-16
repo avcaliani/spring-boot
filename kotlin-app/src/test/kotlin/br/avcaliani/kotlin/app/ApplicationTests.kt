@@ -9,6 +9,7 @@ class ApplicationTests {
 
 	@Test
 	fun contextLoads() {
+		// TODO: Create unit tests
 		Assert.assertNotNull(this)
 	}
 }
