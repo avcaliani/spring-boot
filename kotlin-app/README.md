@@ -19,11 +19,6 @@ curl -d '{ "name": "Anthony", "email": "avcaliani@github.com" }' \
      -H 'Content-Type: application/json' \
      -X POST http://localhost:8080/user
 
-# Update user
-curl -d '{ "id": "0", "name": "Anthony Caliani", "email": "avcaliani@github.com" }' \
-     -H 'Content-Type: application/json' \
-     -X PUT http://localhost:8080/user
-
 # Remove user
 curl -X DELETE http://localhost:8080/user/0
 ```
