@@ -1,4 +1,4 @@
-# 🃏 Kotlin App
+# 😎 Kotlin App
 By Anthony Vilarim Caliani
 
 [![#](https://img.shields.io/badge/licence-MIT-blue.svg)](#) [![#](https://img.shields.io/badge/kotlin-1.3.x-deeppink.svg)](#) [![#](https://img.shields.io/badge/spring--boot-2.2.x-brightgreen.svg)](#)
