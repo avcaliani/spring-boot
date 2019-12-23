@@ -1,14 +1,17 @@
-package br.avcaliani.cache.modules.user;
+package br.avcaliani.cache.user;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import static br.avcaliani.cache.util.TimeUtil.sleep;
+
 @Repository
-public class UserRepository {
+public class UserRepository implements Serializable {
 
     @Value("${app.repository.delay}")
     private long delay;
@@ -16,22 +19,12 @@ public class UserRepository {
     @Cacheable("user.list")
     public List<User> find() {
 
-        List users = new ArrayList<User>();
+        List<User> users = new ArrayList<>();
         users.add(new User("Anthony", "anthony@mail.com"));
         users.add(new User("Joe", "Joe@mail.com"));
 
-        sleep();
-
+        sleep(delay);
         return users;
-    }
-
-    private void sleep() {
-        try {
-            if (delay <= 0) return;
-            Thread.sleep(delay);
-        } catch (InterruptedException ex) {
-            return;
-        }
     }
 
 }
