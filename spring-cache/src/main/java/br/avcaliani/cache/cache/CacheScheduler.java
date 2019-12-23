@@ -24,7 +24,7 @@ public class CacheScheduler {
 
         log.info("Cleaning caches...");
 
-        manager.getCacheNames().stream().forEach(name -> {
+        manager.getCacheNames().forEach(name -> {
             if (detailedReport) detailed(name);
             else simplified(name);
         });
