@@ -1,9 +1,9 @@
 
 # API -------------------------------------
-server.port: 9090
+server.port: ${PORT}
 
 # LOGGING ---------------------------------
-logging.level.root: ERROR
+logging.level.root: ${LOG_LEVEL}
 
 # DATABASE ---------------------------------
 spring:
