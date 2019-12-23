@@ -1,21 +1,25 @@
-package br.avcaliani.skeleton.model.entitites;
+package br.avcaliani.skeleton.model.entity;
 
-import br.avcaliani.skeleton.exceptions.TaskException;
-import br.avcaliani.skeleton.model.dtos.TaskDTO;
-import br.avcaliani.skeleton.utils.Messages;
-import lombok.Data;
+import br.avcaliani.skeleton.exception.TaskException;
+import br.avcaliani.skeleton.model.dto.TaskDTO;
+import br.avcaliani.skeleton.util.Messages;
+import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(indexes = {
         @Index(name = "description_index", columnList = "description")
 })
 @Data
-public class Task {
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
+public class Task implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,17 +38,11 @@ public class Task {
     private List<SubTask> subTasks;
 
     /**
-     * Default Constructor.
-     */
-    public Task() {
-
-    }
-
-    /**
      * DTO Converter Constructor.
+     *
      * @param dto Task DTO.
      */
-    public Task(TaskDTO dto) throws TaskException {
+    public Task(TaskDTO dto) {
 
         if (dto == null)
             throw new TaskException(Messages.NULL_TASK_DTO);
@@ -58,30 +56,8 @@ public class Task {
             this.subTasks = new ArrayList<>();
             dto.getSubTasks().forEach(
                     subTask -> this.subTasks.add(new SubTask(subTask)
-            ));
+                    ));
         }
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Task)) return false;
-        Task task = (Task) o;
-        return Objects.equals(id, task.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", owner='" + owner + '\'' +
-                ", description='" + description + '\'' +
-                ", ready=" + ready +
-                '}';
-    }
 }

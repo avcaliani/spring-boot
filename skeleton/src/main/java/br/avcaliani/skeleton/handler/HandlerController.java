@@ -1,11 +1,9 @@
-package br.avcaliani.skeleton.controllers.utils;
+package br.avcaliani.skeleton.handler;
 
-import br.avcaliani.skeleton.exceptions.TaskException;
+import br.avcaliani.skeleton.exception.TaskException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-@CrossOrigin(allowedHeaders = "*")
 public class HandlerController {
 
     @ExceptionHandler(Exception.class)

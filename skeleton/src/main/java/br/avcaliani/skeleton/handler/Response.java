@@ -1,4 +1,4 @@
-package br.avcaliani.skeleton.controllers.utils;
+package br.avcaliani.skeleton.handler;
 
 import lombok.Data;
 

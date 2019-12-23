@@ -1,10 +1,9 @@
-package br.avcaliani.skeleton.controllers;
+package br.avcaliani.skeleton.controller;
 
-import br.avcaliani.skeleton.controllers.utils.HandlerController;
-import br.avcaliani.skeleton.controllers.utils.Response;
-import br.avcaliani.skeleton.exceptions.TaskException;
-import br.avcaliani.skeleton.model.dtos.TaskDTO;
-import br.avcaliani.skeleton.services.TaskService;
+import br.avcaliani.skeleton.handler.HandlerController;
+import br.avcaliani.skeleton.handler.Response;
+import br.avcaliani.skeleton.model.dto.TaskDTO;
+import br.avcaliani.skeleton.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/task")
-@CrossOrigin(allowedHeaders = "*")
 public class TaskController extends HandlerController {
 
     @Autowired
@@ -23,38 +21,32 @@ public class TaskController extends HandlerController {
     // Actually it's not necessary, but I think it's a good idea.
     // @RequestMapping(value = "/", method = RequestMethod.GET)
     @GetMapping("/")
-    @ResponseBody
-    public ResponseEntity<Response> get() throws TaskException {
+    public ResponseEntity<Response> get() {
         return ResponseEntity.ok(new Response(this.service.findAll()));
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
-    public ResponseEntity<Response> get(@PathVariable("id") Long id) throws TaskException {
+    public ResponseEntity<Response> get(@PathVariable("id") Long id) {
         return ResponseEntity.ok(new Response(this.service.findOne(id)));
     }
 
     @GetMapping("/description/{desc}")
-    @ResponseBody
-    public ResponseEntity<Response> get(@PathVariable("desc") String desc) throws TaskException {
+    public ResponseEntity<Response> get(@PathVariable("desc") String desc) {
         return ResponseEntity.ok(new Response(this.service.findByDescriptionLike(desc)));
     }
 
     @GetMapping("/ready")
-    @ResponseBody
-    public ResponseEntity<Response> getReady() throws TaskException {
+    public ResponseEntity<Response> getReady() {
         return ResponseEntity.ok(new Response(this.service.findByReady(true)));
     }
 
     @GetMapping("/ready/{bool}")
-    @ResponseBody
-    public ResponseEntity<Response> getReady(@PathVariable("bool") Boolean bool) throws TaskException {
+    public ResponseEntity<Response> getReady(@PathVariable("bool") Boolean bool) {
         return ResponseEntity.ok(new Response(this.service.findByReady(bool)));
     }
 
     @PostMapping("/")
-    @ResponseBody
-    public ResponseEntity<Response> save(@RequestBody TaskDTO task, HttpServletRequest request) throws TaskException {
+    public ResponseEntity<Response> save(@RequestBody TaskDTO task, HttpServletRequest request) {
         /**
          * HttpServletRequest is optional and it can be defined in every method here.
          * In this object we have many data, like request header for example.
@@ -63,13 +55,11 @@ public class TaskController extends HandlerController {
     }
 
     @PutMapping("/")
-    @ResponseBody
-    public ResponseEntity<Response> update(@RequestBody TaskDTO task) throws TaskException {
+    public ResponseEntity<Response> update(@RequestBody TaskDTO task) {
         return ResponseEntity.ok(new Response(this.service.update(task)));
     }
 
     @DeleteMapping("/{id}")
-    @ResponseBody
     public ResponseEntity<Response> remove(@PathVariable("id") Long id) {
         return ResponseEntity.ok(new Response(this.service.remove(id)));
     }

@@ -1,11 +1,12 @@
-package br.avcaliani.skeleton.services;
+package br.avcaliani.skeleton.service;
 
-import br.avcaliani.skeleton.exceptions.TaskException;
-import br.avcaliani.skeleton.model.dtos.TaskDTO;
+import br.avcaliani.skeleton.exception.TaskException;
+import br.avcaliani.skeleton.model.dto.TaskDTO;
 
+import java.io.Serializable;
 import java.util.List;
 
-public interface TaskService {
+public interface TaskService extends Serializable {
 
     /**
      * Save new Task.
@@ -14,7 +15,7 @@ public interface TaskService {
      * @return Created Task.
      * @throws TaskException If Something wrong happen.
      */
-    public TaskDTO save(TaskDTO task) throws TaskException;
+    TaskDTO save(TaskDTO task);
 
     /**
      * Edit Task.
@@ -23,7 +24,7 @@ public interface TaskService {
      * @return Updated Task.
      * @throws TaskException If Something wrong happen.
      */
-    public TaskDTO update(TaskDTO task) throws TaskException;
+    TaskDTO update(TaskDTO task);
 
     /**
      * Find all Tasks.
@@ -31,7 +32,7 @@ public interface TaskService {
      * @return List of Tasks.
      * @throws TaskException If Something wrong happen.
      */
-    public List<TaskDTO> findAll() throws TaskException;
+    List<TaskDTO> findAll();
 
     /**
      * Find Task by Id.
@@ -40,7 +41,7 @@ public interface TaskService {
      * @return Task found.
      * @throws TaskException If Something wrong happen.
      */
-    public TaskDTO findOne(Long id) throws TaskException;
+    TaskDTO findOne(Long id);
 
     /**
      * Remove Task.
@@ -48,7 +49,7 @@ public interface TaskService {
      * @param id Task Id.
      * @return true if Task has been removed or false otherwise.
      */
-    public Boolean remove(Long id);
+    Boolean remove(Long id);
 
     /**
      * Find Tasks by Ready Status.
@@ -57,7 +58,7 @@ public interface TaskService {
      * @return List of Tasks
      * @throws TaskException If Something wrong happen.
      */
-    public List<TaskDTO> findByReady(Boolean ready) throws TaskException;
+    List<TaskDTO> findByReady(Boolean ready);
 
     /**
      * Find Tasks looking for description like.
@@ -66,6 +67,6 @@ public interface TaskService {
      * @return List of Tasks
      * @throws TaskException If Something wrong happen.
      */
-    public List<TaskDTO> findByDescriptionLike(String value) throws TaskException;
+    List<TaskDTO> findByDescriptionLike(String value);
 
 }
