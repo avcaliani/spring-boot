@@ -1,7 +1,6 @@
 package br.avcaliani.cache.cache;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.Cache;
@@ -10,10 +9,9 @@ import org.springframework.cache.concurrent.ConcurrentMapCache;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class CacheScheduler {
-
-    private static final Logger L = LoggerFactory.getLogger(CacheScheduler.class);
 
     @Value("${app.cache.detailed.report}")
     private boolean detailedReport;
@@ -24,14 +22,14 @@ public class CacheScheduler {
     @Scheduled(fixedRate = 10000)
     public void clear() {
 
-        L.info("Cleaning caches...");
+        log.info("Cleaning caches...");
 
         manager.getCacheNames().stream().forEach(name -> {
             if (detailedReport) detailed(name);
             else simplified(name);
         });
 
-        L.info("All caches have already been cleaned \\o/");
+        log.info("All caches have already been cleaned \\o/");
     }
 
     private void simplified(String name) {
@@ -41,7 +39,7 @@ public class CacheScheduler {
             return;
 
         cache.clear();
-        L.info("[OK] '{}' (? -> ?)", name);
+        log.info("[OK] '{}' (? -> ?)", name);
     }
 
 
@@ -58,7 +56,7 @@ public class CacheScheduler {
 
         cmc.clear();
 
-        L.info("[OK] '{}' ({} -> {})", name, cached, cmc.getNativeCache().size());
+        log.info("[OK] '{}' ({} -> {})", name, cached, cmc.getNativeCache().size());
     }
 
 }
