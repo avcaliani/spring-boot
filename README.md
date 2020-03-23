@@ -14,7 +14,3 @@ These are my spring boot projects, here I've learned how to do stuffs using _spr
 - 💀 **[skeleton](skeleton/README.md)** Simple app using spring-boot and its features
 - 🔎 **[specification](specification/README.md)**: Learning about JPA + Specification
 - 📦 **[spring-cache](spring-cache/README.md)**: Working with cached data
-
----
-
-_You can find [@avcaliani](#) at [GitHub](https://github.com/avcaliani) or [GitLab](https://gitlab.com/avcaliani)._
