@@ -5,7 +5,3 @@ By Anthony Vilarim Caliani
 
 ## Description
 Working with cached data.
-
----
-
-_You can find [@avcaliani](#) at [GitHub](https://github.com/avcaliani) or [GitLab](https://gitlab.com/avcaliani)._
