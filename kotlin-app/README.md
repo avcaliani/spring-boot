@@ -31,7 +31,3 @@ docker build -t kotlin-app .
 # Running docker image...
 docker run -d -p 8080:8080 --name kotlin-app kotlin-app
 ```
-
----
-
-_You can find [@avcaliani](#) at [GitHub](https://github.com/avcaliani) or [GitLab](https://gitlab.com/avcaliani)._
