@@ -18,7 +18,3 @@ curl http://localhost:8080/student/1
 curl "http://localhost:8080/student/search?email=anthony@github.com&passport=A1234567"
 
 ```
-
----
-
-_You can find [@avcaliani](#) at [GitHub](https://github.com/avcaliani) or [GitLab](https://gitlab.com/avcaliani)._
