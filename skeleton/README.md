@@ -24,7 +24,3 @@ With this simple app I've learned about creating a RESTful API using spring-boot
 
 ## Thanks
 Thank You Guilherme Chiavegatto for teach me how to make a Spring Boot Application from scratch.
-
----
-
-_You can find [@avcaliani](#) at [GitHub](https://github.com/avcaliani) or [GitLab](https://gitlab.com/avcaliani)._
