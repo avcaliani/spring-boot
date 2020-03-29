@@ -16,10 +16,5 @@ With this simple app I've learned about creating a RESTful API using spring-boot
 - Named Queries
 - Using and Configuring JPA
 
-## 🔌 API Usage
-```bash
-# TODO: Update this doc.
-```
-
 ## Thanks
 Thank You Guilherme Chiavegatto for teach me how to make a Spring Boot Application from scratch.
